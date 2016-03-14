@@ -1,16 +1,18 @@
+import Models.UserPreference;
+
 /**
  * Created by lars on 3/5/2016.
  */
 public class CalculateEuclidean implements ICalculation {
 
     @Override
-    public double doOperation(int[] num1, int[] num2) {
+    public double doOperation(UserPreference user1, UserPreference user2) {
 
         double calculation = 0;
         int sumPQ = 0;
 
-        for (int i = 0; i < num1.length; i++) {
-            sumPQ += (num1[i] - num2[i]) * (num1[i] - num2[i]);
+        for (int i = 0; i < user1.getUserRatingsMap().size(); i++) {
+            sumPQ += (user1.getUserRatingsMap().get(i) - num2[i]) * (user1.getUserRatingsMap().get(i) - user2.getUserRatingsMap().get(i));
         }
         calculation = Math.sqrt(sumPQ);
 
