@@ -15,19 +15,20 @@ public class Program {
     public static void main(String args[]) {
 
         //ExecuteMovieData("res/userItem.data");
-        ExecuteMovieData("res/ml-100k/u.data");
+        //ExecuteMovieData("res/ml-100k/u.data");
 
-        //ExecuteCalculations();
+        ExecuteCalculations();
     }
 
-    /*
-    userItem.data assignment
+    /**
+     * Reads a file (e.g. CSV) and places all values in the TreeMap
+     * @param dataFile  the file specified to be read
      */
     private static void ExecuteMovieData(String dataFile) {
 
         BufferedReader br = null;
         String lineSeperator = "";
-        String dataSplitBy = ",";
+        String dataSplitBy = "\t";
 
         TreeMap<Integer, UserPreference> ratingsMap = new TreeMap();
 
@@ -64,20 +65,18 @@ public class Program {
         }
     }
 
-    /*
-    Calculations
+    /**
+     * Executes calculations (Pearson, Euclidean, Cosine)
      */
     private static void ExecuteCalculations() {
 
-        int[] num1 = {1, 3, 4, 4};
-        int[] num2 = {2, 5, 5, 8};
-        Context context = new Context((new CalculatePearson()));
-        context.doCalculation(num1, num2);
-        System.out.println();
+        /**
+         * fill a map here
+         */
 
-        int[] num3 = {2, 4, 1};
-        int[] num4 = {0, 3, 2};
-        context = new Context((new CalculateEuclidean()));
-        System.out.println(context.doCalculation(num3, num4));
+        //Context context = new Context(new CalculatePearson());
+        //context = new Context(new CalculateEuclidean());
+        //Context context = new Context(new CalculateCosine());
+        //context.doCalculation(x, y);
     }
 }

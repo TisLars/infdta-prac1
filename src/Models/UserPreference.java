@@ -1,7 +1,5 @@
 package Models;
 
-import sun.reflect.generics.tree.Tree;
-
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -19,20 +17,18 @@ public class UserPreference {
         userRatingsMap.put(movieId, rating);
     }
 
-    public TreeMap getUserRatingsMap() {
-        return userRatingsMap;
+    public void AddRating(int movieId, Double rating) {
+        userRatingsMap.put(movieId, rating);
     }
 
     public void setUserRatingsMap(TreeMap tm) {
         userRatingsMap = tm;
     }
-
-    public void AddRating(int movieId, Double rating) {
-        userRatingsMap.put(movieId, rating);
+    public TreeMap getUserRatingsMap() {
+        return userRatingsMap;
     }
 
     public void PrintTreeMap() {
-
         System.out.println("User" + userId + ": ");
         for (Map.Entry<Integer, Double> entry : userRatingsMap.entrySet()) {
             System.out.println("\t" + entry.getKey() + "\t" + entry.getValue());

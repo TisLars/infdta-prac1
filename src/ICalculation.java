@@ -5,5 +5,5 @@ import Models.UserPreference;
  */
 public interface ICalculation {
 
-    public double doOperation(UserPreference user1, UserPreference user2);
+    public double doOperation(UserPreference x, UserPreference y);
 }

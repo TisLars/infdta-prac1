@@ -6,16 +6,16 @@ import Models.UserPreference;
 public class CalculateEuclidean implements ICalculation {
 
     @Override
-    public double doOperation(UserPreference user1, UserPreference user2) {
+    public double doOperation(UserPreference x, UserPreference y) {
 
-        double calculation = 0;
+        double result = 0;
         int sumPQ = 0;
 
-        for (int i = 0; i < user1.getUserRatingsMap().size(); i++) {
-            sumPQ += (user1.getUserRatingsMap().get(i) - num2[i]) * (user1.getUserRatingsMap().get(i) - user2.getUserRatingsMap().get(i));
+        for (int i = 0; i < x.getUserRatingsMap().size(); i++) {
+            sumPQ += (x[i] - y[i]) * (x[i] - y[i]);
         }
-        calculation = Math.sqrt(sumPQ);
+        result = Math.sqrt(sumPQ);
 
-        return calculation;
+        return result;
     }
 }

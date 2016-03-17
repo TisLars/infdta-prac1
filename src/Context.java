@@ -1,3 +1,5 @@
+import Models.UserPreference;
+
 /**
  * Created by lars on 3/5/2016.
  */
@@ -9,7 +11,7 @@ public class Context {
         this.iCalc = iCalc;
     }
 
-    public double doCalculation(int[] num1, int[] num2) {
-        return iCalc.doOperation(num1, num2);
+    public double doCalculation(UserPreference x, UserPreference y) {
+        return iCalc.doOperation(x, y);
     }
 }
